@@ -1,3 +1,8 @@
+import Data.AirConditioner;
+import Data.BasicAirConditioner;
+import Data.ProAirConditioner;
+import Data.Room;
+
 public class RoomTest {
     public static void main(String[] args) {
         AirConditioner airConditionerBasic = new BasicAirConditioner(22.0);
@@ -13,6 +18,8 @@ public class RoomTest {
             System.out.println(room);
         }
 
+        System.out.println();
+
         for (int i = 0; i < 3; i++) {
             rooms[0].conditionerOn();
         }
@@ -24,6 +31,8 @@ public class RoomTest {
         for (int i = 0; i < 3; i++) {
             rooms[2].conditionerOn();
         }
+
+        System.out.println();
 
         for (Room room : rooms) {
             System.out.println(room);

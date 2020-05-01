@@ -1,7 +1,13 @@
+package Data;
+
 public class AirConditioner {
-    double maxTemperature;
+    private double maxTemperature;
 
     public AirConditioner(double maxTemperature) {
         this.maxTemperature = maxTemperature;
+    }
+
+    public double getMaxTemperature() {
+        return maxTemperature;
     }
 }

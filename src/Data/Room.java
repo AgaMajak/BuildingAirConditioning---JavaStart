@@ -1,10 +1,10 @@
-import javax.crypto.spec.PSource;
+package Data;
 
 public class Room {
-    double temperature;
-    String roomNumber;
-    double roomVolume;
-    AirConditioner airConditioner;
+    private double temperature;
+    private String roomNumber;
+    private double roomVolume;
+    private AirConditioner airConditioner;
 
     public Room(double temperature, String roomNumber, double roomVolume, AirConditioner airConditioner) {
         this.temperature = temperature;
@@ -13,18 +13,18 @@ public class Room {
         this.airConditioner = airConditioner;
     }
 
-    void conditionerOn() {
+    public void conditionerOn() {
         if (airConditioner instanceof BasicAirConditioner) {
-            if (temperature > airConditioner.maxTemperature+(1.0/roomVolume)){
-            temperature -= 1.0 / roomVolume;
+            if (temperature > airConditioner.getMaxTemperature() + (1.0 / roomVolume)) {
+                temperature -= 1.0 / roomVolume;
             } else {
-                System.out.println("Nie udało się obniżyć temperatury, osiągnięto temperaturę minimalną.");
+                System.out.printf("Nie udało się obniżyć temperatury w pokoju %s, nie można przekroczyć temperatury minimalnej.\n", roomNumber);
             }
         } else if (airConditioner instanceof ProAirConditioner) {
-            if (temperature > airConditioner.maxTemperature+(2.0/roomVolume)){
+            if (temperature > airConditioner.getMaxTemperature() + (2.0 / roomVolume)) {
                 temperature -= 2.0 / roomVolume;
             } else {
-                System.out.printf("Nie udało się obniżyć temperatury w pokoju %s, osiągnięto temperaturę minimalną.\n", roomNumber);
+                System.out.printf("Nie udało się obniżyć temperatury w pokoju %s, nie można przekroczyć temperatury minimalnej.\n", roomNumber);
             }
         }
     }
