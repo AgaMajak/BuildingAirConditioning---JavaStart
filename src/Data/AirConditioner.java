@@ -10,4 +10,8 @@ public class AirConditioner {
     public double getMaxTemperature() {
         return maxTemperature;
     }
+
+    public void conditionerOn(Room room) {
+    }
+
 }

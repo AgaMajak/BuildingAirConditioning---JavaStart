@@ -13,20 +13,24 @@ public class Room {
         this.airConditioner = airConditioner;
     }
 
-    public void conditionerOn() {
-        if (airConditioner instanceof BasicAirConditioner) {
-            if (temperature > airConditioner.getMaxTemperature() + (1.0 / roomVolume)) {
-                temperature -= 1.0 / roomVolume;
-            } else {
-                System.out.printf("Nie udało się obniżyć temperatury w pokoju %s, nie można przekroczyć temperatury minimalnej.\n", roomNumber);
-            }
-        } else if (airConditioner instanceof ProAirConditioner) {
-            if (temperature > airConditioner.getMaxTemperature() + (2.0 / roomVolume)) {
-                temperature -= 2.0 / roomVolume;
-            } else {
-                System.out.printf("Nie udało się obniżyć temperatury w pokoju %s, nie można przekroczyć temperatury minimalnej.\n", roomNumber);
-            }
-        }
+    public double getTemperature() {
+        return temperature;
+    }
+
+    public void setTemperature(double temperature) {
+        this.temperature = temperature;
+    }
+
+    public String getRoomNumber() {
+        return roomNumber;
+    }
+
+    public double getRoomVolume() {
+        return roomVolume;
+    }
+
+    public AirConditioner getAirConditioner() {
+        return airConditioner;
     }
 
     @Override
