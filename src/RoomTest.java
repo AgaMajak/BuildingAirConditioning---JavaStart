@@ -21,8 +21,7 @@ public class RoomTest {
 
         for (int j = 0; j < 3; j++) {
             for (int i = 0; i < 3; i++) {
-                AirConditioner airConditioner = rooms[i].getAirConditioner();
-                airConditioner.conditionerOn(rooms[i]);
+                rooms[i].conditionerOn();
             }
         }
 

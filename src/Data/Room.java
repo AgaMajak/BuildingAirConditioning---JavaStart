@@ -29,8 +29,10 @@ public class Room {
         return roomVolume;
     }
 
-    public AirConditioner getAirConditioner() {
-        return airConditioner;
+
+    public void conditionerOn() {
+        setTemperature(airConditioner.lowerTemperature(getTemperature(), getRoomVolume(), getRoomNumber()));
+
     }
 
     @Override

@@ -11,7 +11,8 @@ public class AirConditioner {
         return maxTemperature;
     }
 
-    public void conditionerOn(Room room) {
+    public double lowerTemperature(double temperature, double volume, String number) {
+        return temperature;
     }
 
 }
